@@ -5,7 +5,7 @@ import util.continuations.{shift, reset, cpsParam}
 abstract class Generator[T] extends Iterator[T] {
 	private var result: T = _
 	private var empty = false
-	var callback: Unit=>Unit = null
+	private var callback: Unit=>Unit = null
 	reset {
 		generate()
 		empty = true
